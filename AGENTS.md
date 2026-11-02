@@ -11,3 +11,5 @@
 - Site content lives in src/data/site.ts until the admin/Cloud phase replaces it with database tables (single source for pages + sitemap).
 - Training carousel uses Embla for looping, touch gestures and navigation; automatic advancement pauses on interaction and respects reduced motion.
 - Shared page headers include history-aware return navigation with parent-page fallback so direct arrivals never leave the site.
+- Button orbit borders are shared through the global CSS and site/Button classes; use the local OrbitBorderButton wrapper for new controls to preserve colors without requiring Originkit authentication.
+- The circular testimonial component uses Framer Motion with scoped keyboard controls and reduced-motion-aware autoplay; testimonial content belongs to the site's central data source.
