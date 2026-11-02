@@ -16,13 +16,13 @@ export const Route = createFileRoute("/")({
 function Wave() {
   return (
     <svg className="pointer-events-none absolute bottom-0 left-0 h-40 w-[200%] opacity-60" viewBox="0 0 2400 220" preserveAspectRatio="none" aria-hidden>
-      <path
+      <path pathLength={1600}
         className="wave-draw stroke-gold"
         fill="none"
         strokeWidth="2.5"
         d="M0 120 L150 120 L170 40 L195 200 L215 70 L235 150 L255 120 L420 120 Q450 60 480 120 T540 120 L600 120 L625 30 L655 210 L680 80 L705 140 L725 120 L900 120 Q930 70 960 120 T1020 120 L1080 120 L1105 50 L1130 190 L1150 120 L1200 120 L1350 120 L1370 40 L1395 200 L1415 70 L1435 150 L1455 120 L1620 120 Q1650 60 1680 120 T1740 120 L1800 120 L1825 30 L1855 210 L1880 80 L1905 140 L1925 120 L2100 120 Q2130 70 2160 120 T2220 120 L2280 120 L2305 50 L2330 190 L2350 120 L2400 120"
       />
-      <path className="wave-draw stroke-ink-foreground/25" style={{ animationDelay: ".4s" }} fill="none" strokeWidth="1.5" d="M0 150 Q100 110 200 150 T400 150 T600 150 T800 150 T1000 150 T1200 150 T1400 150 T1600 150 T1800 150 T2000 150 T2200 150 T2400 150" />
+      <path pathLength={1600} className="wave-draw stroke-ink-foreground/25" style={{ animationDelay: ".4s" }} fill="none" strokeWidth="1.5" d="M0 150 Q100 110 200 150 T400 150 T600 150 T800 150 T1000 150 T1200 150 T1400 150 T1600 150 T1800 150 T2000 150 T2200 150 T2400 150" />
     </svg>
   );
 }
