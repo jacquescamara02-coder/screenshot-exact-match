@@ -1,3 +1,4 @@
+import { AnimatedTitle } from "@/components/ui/text-rotate";
 import { createFileRoute } from "@tanstack/react-router";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { contact } from "@/data/site";
@@ -39,7 +40,7 @@ function Contact() {
             />
           </div>
           <div id="message" className="scroll-mt-24 rounded-lg border bg-card p-7">
-            <h2 className="mb-5 text-2xl font-bold">Envoyer un message</h2>
+            <h2 className="mb-5 text-2xl font-bold"><AnimatedTitle>Envoyer un message</AnimatedTitle></h2>
             <ContactForm {...(sujet === "devis" ? { sujet: "Demande de devis" } : {})} />
           </div>
         </div>

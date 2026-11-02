@@ -96,7 +96,7 @@
     font-family: var(--font-sans);
     line-height: 1.65;
   }
-  h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.08; letter-spacing: -0.02em; }
+  h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.08; letter-spacing: 0; }
   :focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
 }
 
@@ -170,3 +170,7 @@
   .wave-draw { stroke-dashoffset: 0; }
   :where(button, .orbit-border)::after { animation: none; }
 }
+
+.title-rotate { position: relative; display: inline-grid; vertical-align: bottom; overflow: hidden; background: var(--gold); color: var(--ink); border-radius: 0.25rem; padding-inline: 0.12em; line-height: 1.15; }
+.title-rotate-sizer { grid-area: 1 / 1; visibility: hidden; }
+.title-rotate-layer { grid-area: 1 / 1; }

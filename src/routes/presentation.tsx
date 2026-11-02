@@ -1,3 +1,4 @@
+import { AnimatedTitle } from "@/components/ui/text-rotate";
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { Check } from "lucide-react";
@@ -31,7 +32,7 @@ function Presentation() {
         {tab === "Qui sommes-nous ?" && (
           <Reveal className="grid items-center gap-10 md:grid-cols-2">
             <div className="space-y-4 text-lg text-muted-foreground">
-              <h2 className="text-3xl font-bold text-foreground md:text-4xl">Qui sommes-nous ?</h2>
+              <h2 className="text-3xl font-bold text-foreground md:text-4xl"><AnimatedTitle>Qui sommes-nous ?</AnimatedTitle></h2>
               <p>Seven Consulting est un cabinet d'étude et de formation qui excelle dans l'expertise, la formation et la consultation industrielle, minière, BTP et en ressources humaines.</p>
               <p>Entouré de spécialistes, le cabinet porte une vision novatrice et une expertise de haut niveau.</p>
               <p>Il transmet aux cadres supérieurs, agents de maîtrise et techniciens les compétences et savoirs utiles au développement personnel et collectif.</p>
