@@ -15,3 +15,4 @@
 - The circular testimonial component uses Framer Motion with scoped keyboard controls and reduced-motion-aware autoplay; testimonial content belongs to the site's central data source.
 
 - Large page and section headings use the shared AnimatedTitle/TextRotate primitive with the existing Framer Motion dependency, preserving source wording and stable dimensions.
+- Header and footer reuse one CDN-hosted logo pointer; global semantic tokens drive the brand palette, with separate accent foreground for accessible button and title contrast.
