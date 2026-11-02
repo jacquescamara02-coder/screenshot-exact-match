@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState, type ReactNode } from "react";
-import { Link } from "@tanstack/react-router";
+import { Link, useLocation, useRouter } from "@tanstack/react-router";
+import { ArrowLeft } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 export function Reveal({ children, className, delay = 0 }: { children: ReactNode; className?: string; delay?: number }) {
@@ -43,10 +45,22 @@ export function Tag({ children, onDark }: { children: ReactNode; onDark?: boolea
   );
 }
 
+export function BackButton() {
+  const router = useRouter();
+  const { pathname } = useLocation();
+  const fallback = pathname.startsWith("/formations/") ? "/formations" : pathname.startsWith("/prestations/") ? "/prestations" : "/";
+  const goBack = () => {
+    if ((window.history.state?.__TSR_index ?? 0) > 0) router.history.back();
+    else void router.navigate({ to: fallback });
+  };
+  return <Button variant="ghost" onClick={goBack} className="mb-6 -ml-3 text-ink-muted hover:bg-ink-foreground/10 hover:text-ink-foreground"><ArrowLeft /> Retour</Button>;
+}
+
 export function PageHeader({ tag, title, lead }: { tag?: string; title: string; lead?: string }) {
   return (
     <div className="bg-gradient-to-br from-ink to-steel pb-16 pt-36 text-ink-foreground">
       <div className="container-site">
+        <div><BackButton /></div>
         {tag && <Tag onDark>{tag}</Tag>}
         <h1 className="max-w-[20ch] text-4xl font-extrabold md:text-6xl">{title}</h1>
         {lead && <p className="mt-4 max-w-[60ch] text-lg text-ink-muted">{lead}</p>}

@@ -3,6 +3,8 @@ import { ArrowRight, Plus } from "lucide-react";
 import { domaines, faq, formatDate, formations, methode, images } from "@/data/site";
 import { btn, CtaBand, H2, Reveal, Section, Tag } from "@/components/site/ui";
 import { seo } from "@/lib/seo";
+import { FormationCarousel } from "@/components/site/FormationCarousel";
+import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/")({
   head: () =>
@@ -28,7 +30,6 @@ function Wave() {
 }
 
 function Home() {
-  const prochaines = formations.slice(0, 8);
   return (
     <>
       <div className="relative overflow-hidden bg-ink pb-48 pt-36 text-ink-foreground md:pt-44">
@@ -42,8 +43,9 @@ function Home() {
             <p className="my-7 max-w-[56ch] text-lg text-ink-muted">
               Cabinet d'étude et de formation en expertise, fiabilité et maintenance pour l'industrie, les mines, le BTP et les ressources humaines.
             </p>
-            <div className="flex flex-wrap gap-3.5">
-              <Link to="/formations" className={btn.gold}>Voir les formations <ArrowRight className="h-4 w-4" /></Link>
+            <div className="flex flex-col items-start gap-3.5">
+              <Button asChild className={`${btn.gold} h-auto`}><Link to="/formations">Voir les formations <ArrowRight className="h-4 w-4" /></Link></Button>
+              <Button asChild variant="ghost" className={`${btn.ghost} h-auto`}><Link to="/contact" search={{ sujet: "devis" }} hash="message">Demander un devis <ArrowRight className="h-4 w-4" /></Link></Button>
             </div>
           </Reveal>
         </div>
@@ -71,23 +73,8 @@ function Home() {
       </Section>
 
       <Section alt>
-        <H2 lead="Faites défiler pour découvrir les sessions.">Nos prochaines formations</H2>
-        <div className="no-scrollbar mt-9 flex snap-x snap-mandatory gap-5 overflow-x-auto pb-4">
-          {prochaines.map((f) => (
-            <Link
-              key={f.slug}
-              to="/formations/$slug"
-              params={{ slug: f.slug }}
-              className="card-lift flex min-h-52 w-[min(320px,80%)] shrink-0 snap-start flex-col justify-between rounded-lg bg-gradient-to-br from-ink to-steel p-6 text-ink-foreground"
-            >
-              <span className="text-sm font-semibold text-gold">{formatDate(f.date)}</span>
-              <div>
-                <h3 className="text-xl font-bold">{f.titre}</h3>
-                <p className="mt-1 text-sm text-ink-muted">{f.domaine}</p>
-              </div>
-            </Link>
-          ))}
-        </div>
+        <H2>Nos prochaines formations</H2>
+        <FormationCarousel />
         <Link to="/formations" className={`${btn.ink} mt-6`}>Toutes les formations</Link>
       </Section>
 
