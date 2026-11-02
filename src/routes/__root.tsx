@@ -83,6 +83,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "description", content: "Cabinet d'étude et de formation à Ouagadougou." },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "Seven Consulting" },
+      { property: "og:title", content: "Seven Consulting · Fiabilité, maintenance et formation" },
+      { property: "og:description", content: "Cabinet d'étude et de formation à Ouagadougou : expertise industrielle, minière, BTP et ressources humaines." },
+      { property: "og:image", content: "https://seven-consulting.jacquescamara02.workers.dev/partage.jpg" },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { name: "twitter:image", content: "https://seven-consulting.jacquescamara02.workers.dev/partage.jpg" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
@@ -93,7 +99,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: "https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap",
       },
       { rel: "stylesheet", href: appCss },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "icon", href: "/favicon.png", type: "image/png" },
     ],
     scripts: [
       {
