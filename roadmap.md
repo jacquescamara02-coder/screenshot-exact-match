@@ -1,4 +1,5 @@
 # Roadmap Seven Consulting
+- [ ] Intégrer le logo fourni et adapter uniquement la palette du site à ses couleurs
 - [x] Adapter les grands titres au texte animé fourni, retirer les commandes sous les avis et accélérer les deux carrousels
 - [x] Ajouter les avis en carrousel de portraits et le contour animé sur tous les boutons (exemples signalés, à remplacer par des avis authentiques)
 - [x] Ajouter le bouton devis sous le bouton formations, carrousel automatique avec contrôles et retour sur les pages
