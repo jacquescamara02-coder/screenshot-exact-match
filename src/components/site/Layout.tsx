@@ -4,7 +4,7 @@ import { Menu, X, ArrowUp, MessageCircle, Phone, Mail, MapPin } from "lucide-rea
 import { contact, nav, waLink } from "@/data/site";
 import { btn, inputCls, useScrolled } from "./ui";
 import { cn } from "@/lib/utils";
-import logo from "@/assets/seven-consulting-logo.jpg.asset.json";
+import logo from "@/assets/logo-seven-consulting.jpg";
 
 export function Header() {
   const [open, setOpen] = useState(false);
