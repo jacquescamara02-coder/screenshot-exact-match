@@ -63,7 +63,7 @@ function Mediatheque() {
 
       {idx !== null && (
         <div role="dialog" aria-modal className="fixed inset-0 z-[70] grid place-items-center bg-ink/95 p-4" onClick={() => setIdx(null)}>
-          <img src={photos[idx].src} alt={photos[idx].alt} className="max-h-[85vh] max-w-full rounded-lg" onClick={(e) => e.stopPropagation()} />
+          <img src={photos[idx]?.src} alt={photos[idx]?.alt} className="max-h-[85vh] max-w-full rounded-lg" onClick={(e) => e.stopPropagation()} />
           <button aria-label="Fermer" className="absolute right-5 top-5 text-ink-foreground"><X className="h-8 w-8" /></button>
           <button aria-label="Précédente" className="absolute left-4 text-ink-foreground" onClick={(e) => { e.stopPropagation(); setIdx((idx - 1 + photos.length) % photos.length); }}><ChevronLeft className="h-10 w-10" /></button>
           <button aria-label="Suivante" className="absolute right-4 text-ink-foreground" onClick={(e) => { e.stopPropagation(); setIdx((idx + 1) % photos.length); }}><ChevronRight className="h-10 w-10" /></button>
