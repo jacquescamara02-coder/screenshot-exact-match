@@ -10,33 +10,141 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as MediathequeRouteImport } from './routes/mediatheque'
+import { Route as PresentationRouteImport } from './routes/presentation'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as FormationsIndexRouteImport } from './routes/formations.index'
+import { Route as FormationsSlugRouteImport } from './routes/formations.$slug'
+import { Route as PrestationsIndexRouteImport } from './routes/prestations.index'
+import { Route as PrestationsSlugRouteImport } from './routes/prestations.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MediathequeRoute = MediathequeRouteImport.update({
+  id: '/mediatheque',
+  path: '/mediatheque',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PresentationRoute = PresentationRouteImport.update({
+  id: '/presentation',
+  path: '/presentation',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FormationsIndexRoute = FormationsIndexRouteImport.update({
+  id: '/formations/',
+  path: '/formations/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FormationsSlugRoute = FormationsSlugRouteImport.update({
+  id: '/formations/$slug',
+  path: '/formations/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrestationsIndexRoute = PrestationsIndexRouteImport.update({
+  id: '/prestations/',
+  path: '/prestations/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrestationsSlugRoute = PrestationsSlugRouteImport.update({
+  id: '/prestations/$slug',
+  path: '/prestations/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/contact': typeof ContactRoute
+  '/mediatheque': typeof MediathequeRoute
+  '/presentation': typeof PresentationRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/formations/$slug': typeof FormationsSlugRoute
+  '/prestations/$slug': typeof PrestationsSlugRoute
+  '/formations/': typeof FormationsIndexRoute
+  '/prestations/': typeof PrestationsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/contact': typeof ContactRoute
+  '/mediatheque': typeof MediathequeRoute
+  '/presentation': typeof PresentationRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/formations/$slug': typeof FormationsSlugRoute
+  '/prestations/$slug': typeof PrestationsSlugRoute
+  '/formations': typeof FormationsIndexRoute
+  '/prestations': typeof PrestationsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/contact': typeof ContactRoute
+  '/mediatheque': typeof MediathequeRoute
+  '/presentation': typeof PresentationRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/formations/$slug': typeof FormationsSlugRoute
+  '/prestations/$slug': typeof PrestationsSlugRoute
+  '/formations/': typeof FormationsIndexRoute
+  '/prestations/': typeof PrestationsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/contact'
+    | '/mediatheque'
+    | '/presentation'
+    | '/sitemap.xml'
+    | '/formations/$slug'
+    | '/prestations/$slug'
+    | '/formations/'
+    | '/prestations/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/contact'
+    | '/mediatheque'
+    | '/presentation'
+    | '/sitemap.xml'
+    | '/formations/$slug'
+    | '/prestations/$slug'
+    | '/formations'
+    | '/prestations'
+  id:
+    | '__root__'
+    | '/'
+    | '/contact'
+    | '/mediatheque'
+    | '/presentation'
+    | '/sitemap.xml'
+    | '/formations/$slug'
+    | '/prestations/$slug'
+    | '/formations/'
+    | '/prestations/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ContactRoute: typeof ContactRoute
+  MediathequeRoute: typeof MediathequeRoute
+  PresentationRoute: typeof PresentationRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  FormationsSlugRoute: typeof FormationsSlugRoute
+  PrestationsSlugRoute: typeof PrestationsSlugRoute
+  FormationsIndexRoute: typeof FormationsIndexRoute
+  PrestationsIndexRoute: typeof PrestationsIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +156,75 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mediatheque': {
+      id: '/mediatheque'
+      path: '/mediatheque'
+      fullPath: '/mediatheque'
+      preLoaderRoute: typeof MediathequeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/presentation': {
+      id: '/presentation'
+      path: '/presentation'
+      fullPath: '/presentation'
+      preLoaderRoute: typeof PresentationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/formations/': {
+      id: '/formations/'
+      path: '/formations'
+      fullPath: '/formations/'
+      preLoaderRoute: typeof FormationsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/formations/$slug': {
+      id: '/formations/$slug'
+      path: '/formations/$slug'
+      fullPath: '/formations/$slug'
+      preLoaderRoute: typeof FormationsSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/prestations/': {
+      id: '/prestations/'
+      path: '/prestations'
+      fullPath: '/prestations/'
+      preLoaderRoute: typeof PrestationsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/prestations/$slug': {
+      id: '/prestations/$slug'
+      path: '/prestations/$slug'
+      fullPath: '/prestations/$slug'
+      preLoaderRoute: typeof PrestationsSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ContactRoute: ContactRoute,
+  MediathequeRoute: MediathequeRoute,
+  PresentationRoute: PresentationRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
+  FormationsSlugRoute: FormationsSlugRoute,
+  PrestationsSlugRoute: PrestationsSlugRoute,
+  FormationsIndexRoute: FormationsIndexRoute,
+  PrestationsIndexRoute: PrestationsIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
