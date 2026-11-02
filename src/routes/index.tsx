@@ -113,9 +113,8 @@ function Home() {
       </Section>
 
       <Section>
-        <H2>Avis clients</H2>
+        <H2 lead="Ils nous ont fait confiance pour former leurs équipes et fiabiliser leurs équipements.">Avis clients</H2>
         <Reveal className="mt-12"><CircularTestimonials testimonials={testimonials} /></Reveal>
-        <p className="mt-6 text-xs text-muted-foreground">Avis de démonstration · portraits générés.</p>
       </Section>
 
       <Section alt>
