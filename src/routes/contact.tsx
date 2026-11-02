@@ -6,11 +6,13 @@ import { ContactForm } from "@/components/site/Forms";
 import { seo } from "@/lib/seo";
 
 export const Route = createFileRoute("/contact")({
+  validateSearch: (search: Record<string, unknown>): { sujet?: "devis" } => search["sujet"] === "devis" ? { sujet: "devis" } : {},
   head: () => seo("Contact", "Contactez Seven Consulting à Ouagadougou : formations, devis, audits de maintenance."),
   component: Contact,
 });
 
 function Contact() {
+  const { sujet } = Route.useSearch();
   return (
     <>
       <PageHeader tag="Contact" title="Parlons de votre projet." lead="Formation, devis, audit de maintenance : nous vous répondons rapidement." />
@@ -36,9 +38,9 @@ function Contact() {
               className="h-72 w-full rounded-lg border"
             />
           </div>
-          <div className="rounded-lg border bg-card p-7">
+          <div id="message" className="scroll-mt-24 rounded-lg border bg-card p-7">
             <h2 className="mb-5 text-2xl font-bold">Envoyer un message</h2>
-            <ContactForm />
+            <ContactForm {...(sujet === "devis" ? { sujet: "Demande de devis" } : {})} />
           </div>
         </div>
       </Section>
