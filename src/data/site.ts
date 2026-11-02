@@ -61,7 +61,7 @@ export const contact = {
   phoneHrefs: ["tel:+22655606031", "tel:+22655606032"],
   email: "infos@sevenconsultingservices.com",
   address: "13 BP 15 Ouagadougou 13, Burkina Faso",
-  whatsapp: "https://wa.me/22655606031",
+  whatsapp: "https://wa.me/22673025082",
   catalogue:
     "https://sevenconsultingservices.com/wp-content/uploads/2020/10/Catalogue-Formation-SevenConsulting-2021.pdf",
 };
