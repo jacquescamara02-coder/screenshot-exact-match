@@ -1,10 +1,11 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Plus } from "lucide-react";
-import { domaines, faq, formatDate, formations, methode, images } from "@/data/site";
+import { domaines, faq, formatDate, formations, methode, images, testimonials } from "@/data/site";
 import { btn, CtaBand, H2, Reveal, Section, Tag } from "@/components/site/ui";
 import { seo } from "@/lib/seo";
 import { FormationCarousel } from "@/components/site/FormationCarousel";
 import { Button } from "@/components/ui/button";
+import { CircularTestimonials } from "@/components/ui/circular-testimonials";
 
 export const Route = createFileRoute("/")({
   head: () =>
@@ -111,6 +112,12 @@ function Home() {
       </Section>
 
       <Section>
+        <H2>Avis clients</H2>
+        <p className="mt-3 text-sm text-muted-foreground">Témoignages illustratifs et portraits générés, en attente d’avis clients authentiques.</p>
+        <Reveal className="mt-12"><CircularTestimonials testimonials={testimonials} /></Reveal>
+      </Section>
+
+      <Section alt>
         <H2>Questions fréquentes</H2>
         <div className="mt-8 max-w-3xl divide-y rounded-lg border bg-card">
           {faq.map((f) => (

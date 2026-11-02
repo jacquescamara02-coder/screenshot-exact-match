@@ -28,6 +28,16 @@ import mCao from "@/assets/media-cao.jpg";
 import vPromo from "@/assets/video-promotion.jpg";
 import vPratique from "@/assets/video-pratique.jpg";
 import vAudit from "@/assets/video-audit.jpg";
+import avisMaintenance from "@/assets/avis-responsable-maintenance.jpg";
+import avisRh from "@/assets/avis-responsable-rh.jpg";
+import avisIngenieure from "@/assets/avis-ingenieure.jpg";
+
+// Illustrative content only. Replace with approved customer quotes and portraits.
+export const testimonials = [
+  { name: "Responsable maintenance", designation: "Industrie · Profil illustratif", quote: "Une formation concrète, avec des méthodes directement applicables à l’organisation de la maintenance et au suivi de nos équipements.", src: avisMaintenance },
+  { name: "Responsable ressources humaines", designation: "Formation des équipes · Profil illustratif", quote: "Des échanges de qualité et une approche adaptée aux besoins des équipes. Les cas pratiques rendent les notions accessibles et utiles au quotidien.", src: avisRh },
+  { name: "Ingénieure planification", designation: "Mines et BTP · Profil illustratif", quote: "Les exercices de planification nous donnent des repères clairs pour mieux préparer les interventions et coordonner les équipes sur le terrain.", src: avisIngenieure },
+];
 
 export const images = { hero, presentation };
 

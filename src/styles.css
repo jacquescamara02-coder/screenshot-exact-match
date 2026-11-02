@@ -68,6 +68,8 @@
   --input: oklch(0.9 0.006 150);
   --ring: var(--gold);
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --orbit-highlight: var(--gold);
+  --portrait-shadow: 0 16px 35px -18px color-mix(in oklab, var(--ink) 45%, transparent);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -127,8 +129,44 @@
 
 @utility no-scrollbar { scrollbar-width: none; &::-webkit-scrollbar { display: none; } }
 
+@property --orbit-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+:where(button, .orbit-border) {
+  position: relative;
+  isolation: isolate;
+}
+:where(button, .orbit-border)::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1.5px;
+  border-radius: inherit;
+  background: conic-gradient(from var(--orbit-angle), transparent 0deg 245deg, var(--orbit-highlight) 285deg, transparent 325deg);
+  mask: linear-gradient(var(--card) 0 0) content-box, linear-gradient(var(--card) 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+  animation: orbit-border-turn 3.6s linear infinite;
+}
+:where(button, .orbit-border):disabled::after { animation-play-state: paused; opacity: 0.35; }
+@keyframes orbit-border-turn { to { --orbit-angle: 360deg; } }
+
+.testimonial-grid { display: grid; gap: 2.5rem; align-items: center; }
+.testimonial-portraits { position: relative; width: 68%; max-width: 20rem; aspect-ratio: 3 / 4; margin: 2rem auto 0; }
+.testimonial-portrait { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; border-radius: 0.5rem; box-shadow: var(--portrait-shadow); }
+.testimonial-copy { min-height: 20rem; }
+@media (min-width: 768px) {
+  .testimonial-grid { grid-template-columns: 1fr 1fr; gap: 4rem; }
+  .testimonial-portraits { margin-block: 2rem; }
+  .testimonial-copy { min-height: 22rem; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
   .reveal { opacity: 1; transform: none; }
   .wave-draw { stroke-dashoffset: 0; }
+  :where(button, .orbit-border)::after { animation: none; }
 }

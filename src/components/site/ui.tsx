@@ -29,7 +29,7 @@ export function Reveal({ children, className, delay = 0 }: { children: ReactNode
 }
 
 const btnBase =
-  "inline-flex items-center justify-center gap-2 rounded-full px-6 py-3.5 text-[15px] font-semibold transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-0.5 disabled:opacity-60 disabled:pointer-events-none";
+  "orbit-border inline-flex items-center justify-center gap-2 rounded-full px-6 py-3.5 text-[15px] font-semibold transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-0.5 disabled:opacity-60 disabled:pointer-events-none";
 export const btn = {
   gold: cn(btnBase, "bg-gold text-ink hover:shadow-[0_10px_30px_-10px_var(--gold)]"),
   ghost: cn(btnBase, "border border-ink-foreground/35 text-ink-foreground hover:bg-ink-foreground/10"),
