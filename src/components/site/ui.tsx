@@ -35,6 +35,9 @@ export const btn = {
   ghost: cn(btnBase, "border border-ink-foreground/35 text-ink-foreground hover:bg-ink-foreground/10"),
   ink: cn(btnBase, "bg-primary text-primary-foreground"),
   outline: cn(btnBase, "border border-border text-foreground hover:border-gold"),
+  // Boutons du haut de l'accueil : la couleur ne change jamais au survol ou au toucher.
+  heroGold: cn(btnBase, "bg-gold text-ink [-webkit-tap-highlight-color:transparent]"),
+  heroGhost: cn(btnBase, "border border-ink-foreground/50 bg-ink/40 text-ink-foreground backdrop-blur-sm [-webkit-tap-highlight-color:transparent]"),
 };
 
 export function Tag({ children, onDark }: { children: ReactNode; onDark?: boolean }) {

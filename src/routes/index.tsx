@@ -33,19 +33,19 @@ function Home() {
   return (
     <>
       <div className="relative overflow-hidden bg-ink pb-48 pt-36 text-ink-foreground md:pt-44">
-        <img src={images.industrie} alt="" width={1024} height={768} className="absolute inset-0 h-full w-full object-cover opacity-15" />
-        <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/90 to-ink/40" />
+        <img src={images.hero} alt="Ingénieur maintenance de Seven Consulting sur un site industriel" width={1600} height={912} fetchPriority="high" className="absolute inset-0 h-full w-full object-cover object-[70%_center]" />
+        <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/75 to-ink/10" />
         <Wave />
         <div className="container-site relative">
           <Reveal>
             <Tag onDark>Ouagadougou · Burkina Faso</Tag>
             <h1 className="max-w-[15ch] text-5xl font-extrabold md:text-7xl lg:text-[5.25rem]">Des équipements qui ne tombent pas en panne.</h1>
-            <p className="my-7 max-w-[56ch] text-lg text-ink-muted">
+            <p className="my-7 max-w-[56ch] text-lg text-ink-foreground/85">
               Cabinet d'étude et de formation en expertise, fiabilité et maintenance pour l'industrie, les mines, le BTP et les ressources humaines.
             </p>
             <div className="flex flex-col items-start gap-3.5">
-              <Button asChild className={`${btn.gold} h-auto`}><Link to="/formations">Voir les formations <ArrowRight className="h-4 w-4" /></Link></Button>
-              <Button asChild variant="ghost" className={`${btn.ghost} h-auto`}><Link to="/contact" search={{ sujet: "devis" }} hash="message">Demander un devis <ArrowRight className="h-4 w-4" /></Link></Button>
+              <Link to="/formations" className={btn.heroGold}>Voir les formations <ArrowRight className="h-4 w-4" /></Link>
+              <Link to="/contact" search={{ sujet: "devis" }} hash="message" className={btn.heroGhost}>Demander un devis <ArrowRight className="h-4 w-4" /></Link>
             </div>
           </Reveal>
         </div>
