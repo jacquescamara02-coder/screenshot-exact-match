@@ -1,11 +1,50 @@
-import industrie from "@/assets/industrie.jpg";
-import mines from "@/assets/mines.jpg";
-import btp from "@/assets/btp.jpg";
-import formation from "@/assets/formation.jpg";
-import fabrication from "@/assets/fabrication.jpg";
-import outillage from "@/assets/outillage.jpg";
+// Chaque photo n'est utilisée qu'à un seul endroit du site.
+import hero from "@/assets/hero-ingenieur.jpg";
+import industrie from "@/assets/domaine-industrie.jpg";
+import mines from "@/assets/domaine-mines.jpg";
+import btp from "@/assets/domaine-btp.jpg";
+import rh from "@/assets/domaine-rh.jpg";
+import presentation from "@/assets/presentation-equipe.jpg";
+import emploi from "@/assets/prestation-emploi.jpg";
+import fabrication from "@/assets/prestation-fabrication.jpg";
+import outillage from "@/assets/prestation-outillage.jpg";
+import fParcAuto from "@/assets/formation-parc-auto.jpg";
+import fGestion from "@/assets/formation-gestion-maintenance.jpg";
+import fBudget from "@/assets/formation-budget.jpg";
+import fPlanif from "@/assets/formation-planification.jpg";
+import fMiniers from "@/assets/formation-equipements-miniers.jpg";
+import fRisque from "@/assets/formation-risque.jpg";
+import fPlanificateurs from "@/assets/formation-planificateurs.jpg";
+import fMobiles from "@/assets/formation-equipements-mobiles.jpg";
+import fCertif from "@/assets/formation-certification.jpg";
+import fRh from "@/assets/formation-rh-atelier.jpg";
+import fSenior from "@/assets/formation-planificateur-senior.jpg";
+import mThermo from "@/assets/media-thermographie.jpg";
+import mAlign from "@/assets/media-alignement.jpg";
+import mHuile from "@/assets/media-analyse-huile.jpg";
+import mSoudure from "@/assets/media-soudure.jpg";
+import mSecours from "@/assets/media-secourisme.jpg";
+import mCao from "@/assets/media-cao.jpg";
+import vPromo from "@/assets/video-promotion.jpg";
+import vPratique from "@/assets/video-pratique.jpg";
+import vAudit from "@/assets/video-audit.jpg";
 
-export const images = { industrie, mines, btp, formation, fabrication, outillage };
+export const images = { hero, presentation };
+
+export const photos = [
+  { src: mThermo, alt: "Thermographie infrarouge sur armoire électrique" },
+  { src: mAlign, alt: "Alignement laser d'une pompe" },
+  { src: mHuile, alt: "Analyse des huiles en laboratoire" },
+  { src: mSoudure, alt: "Soudure en atelier de fabrication" },
+  { src: mSecours, alt: "Formation sécurité et secourisme" },
+  { src: mCao, alt: "Conception CAO-DAO" },
+];
+
+export const videos = [
+  { src: vPromo, titre: "Promotion de techniciens formés" },
+  { src: vPratique, titre: "Travaux pratiques en atelier" },
+  { src: vAudit, titre: "Audit de maintenance sur site" },
+];
 
 export const contact = {
   phones: ["(+226) 55 60 60 31", "(+226) 55 60 60 32"],
