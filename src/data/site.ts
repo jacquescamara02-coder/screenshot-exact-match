@@ -71,7 +71,7 @@ export const domaines = [
   { titre: "Industrie", texte: "Maintenance, fiabilité et gestion des actifs industriels.", img: industrie },
   { titre: "Mines", texte: "Fiabilité des équipements miniers et mobiles.", img: mines },
   { titre: "BTP", texte: "Équipements de chantier, parc automobile, transport.", img: btp },
-  { titre: "Ressources humaines", texte: "Formation des cadres, développement des compétences.", img: formation },
+  { titre: "Ressources humaines", texte: "Formation des cadres, développement des compétences.", img: rh },
 ];
 
 export const methode = [
@@ -105,7 +105,7 @@ export const missions = [
 
 export type Prestation = { slug: string; titre: string; texte: string; img: string };
 export const prestations: Prestation[] = [
-  { slug: "offres-emploi", titre: "Offres d'emploi", texte: "Recrutement et placement de profils techniques et de gestion de la maintenance.", img: formation },
+  { slug: "offres-emploi", titre: "Offres d'emploi", texte: "Recrutement et placement de profils techniques et de gestion de la maintenance.", img: emploi },
   { slug: "fabrication-mecanique", titre: "Fabrication mécanique", texte: "Fabrication de pièces et d'ensembles mécaniques pour l'industrie, les mines et le BTP.", img: fabrication },
   { slug: "outillage", titre: "Outillage", texte: "Fourniture et conseil en outillage pour la maintenance industrielle.", img: outillage },
 ];
@@ -125,17 +125,17 @@ export const domainesFormation = [
 export type Formation = { slug: string; titre: string; date?: string; domaine: string; img: string };
 // Dates/durées manquantes : laissées vides, à compléter (« à confirmer »).
 export const formations: Formation[] = [
-  { slug: "gestion-parc-automobile", titre: "Gestion d'un parc automobile", date: "2025-01-04", domaine: "Transport", img: btp },
-  { slug: "gestion-maintenance-janvier-2025", titre: "Gestion de la maintenance", date: "2025-01", domaine: "Management de la maintenance", img: industrie },
-  { slug: "aspects-economiques-maintenance", titre: "Aspects économiques de la maintenance, conception de budget", date: "2024-02-15", domaine: "Management de la maintenance", img: formation },
-  { slug: "planification-ordonnancement", titre: "Planification et ordonnancement de la maintenance", date: "2024-02-07", domaine: "Maintenance industrielle", img: industrie },
-  { slug: "fiabilite-equipements-miniers-btp", titre: "Fiabilité des équipements miniers et BTP", date: "2023-12-16", domaine: "Condition monitoring et fiabilité", img: mines },
-  { slug: "gestion-risque-iso-31000", titre: "Gestion du risque ISO 31000", date: "2023-12-13", domaine: "Qualité-Hygiène-Sécurité-Environnement", img: formation },
-  { slug: "metiers-planificateurs", titre: "Métiers de planificateurs de maintenance", domaine: "Maintenance industrielle", img: industrie },
-  { slug: "fiabilite-equipements-mobiles", titre: "Fiabilité des équipements mobiles mines et BTP (techniciens fiabilistes)", domaine: "Condition monitoring et fiabilité", img: mines },
-  { slug: "pecb", titre: "PECB", domaine: "Qualité-Hygiène-Sécurité-Environnement", img: formation },
-  { slug: "formation-rh", titre: "Formation RH", domaine: "Ressources humaines", img: formation },
-  { slug: "planificateur-senior", titre: "Planificateur senior", domaine: "Maintenance industrielle", img: fabrication },
+  { slug: "gestion-parc-automobile", titre: "Gestion d'un parc automobile", date: "2025-01-04", domaine: "Transport", img: fParcAuto },
+  { slug: "gestion-maintenance-janvier-2025", titre: "Gestion de la maintenance", date: "2025-01", domaine: "Management de la maintenance", img: fGestion },
+  { slug: "aspects-economiques-maintenance", titre: "Aspects économiques de la maintenance, conception de budget", date: "2024-02-15", domaine: "Management de la maintenance", img: fBudget },
+  { slug: "planification-ordonnancement", titre: "Planification et ordonnancement de la maintenance", date: "2024-02-07", domaine: "Maintenance industrielle", img: fPlanif },
+  { slug: "fiabilite-equipements-miniers-btp", titre: "Fiabilité des équipements miniers et BTP", date: "2023-12-16", domaine: "Condition monitoring et fiabilité", img: fMiniers },
+  { slug: "gestion-risque-iso-31000", titre: "Gestion du risque ISO 31000", date: "2023-12-13", domaine: "Qualité-Hygiène-Sécurité-Environnement", img: fRisque },
+  { slug: "metiers-planificateurs", titre: "Métiers de planificateurs de maintenance", domaine: "Maintenance industrielle", img: fPlanificateurs },
+  { slug: "fiabilite-equipements-mobiles", titre: "Fiabilité des équipements mobiles mines et BTP (techniciens fiabilistes)", domaine: "Condition monitoring et fiabilité", img: fMobiles },
+  { slug: "pecb", titre: "PECB", domaine: "Qualité-Hygiène-Sécurité-Environnement", img: fCertif },
+  { slug: "formation-rh", titre: "Formation RH", domaine: "Ressources humaines", img: fRh },
+  { slug: "planificateur-senior", titre: "Planificateur senior", domaine: "Maintenance industrielle", img: fSenior },
 ];
 
 const mois = ["janv.", "fév.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc."];

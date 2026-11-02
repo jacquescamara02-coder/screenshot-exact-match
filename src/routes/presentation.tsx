@@ -36,7 +36,7 @@ function Presentation() {
               <p>Entouré de spécialistes, le cabinet porte une vision novatrice et une expertise de haut niveau.</p>
               <p>Il transmet aux cadres supérieurs, agents de maîtrise et techniciens les compétences et savoirs utiles au développement personnel et collectif.</p>
             </div>
-            <img src={images.formation} alt="Session de formation Seven Consulting" loading="lazy" width={1024} height={768} className="rounded-lg" />
+            <img src={images.presentation} alt="Session de formation Seven Consulting" loading="lazy" width={1024} height={768} className="rounded-lg" />
           </Reveal>
         )}
 

@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { X, ChevronLeft, ChevronRight, PlayCircle } from "lucide-react";
-import { images } from "@/data/site";
+import { photos, videos } from "@/data/site";
 import { PageHeader, Reveal, Section, H2 } from "@/components/site/ui";
 import { seo } from "@/lib/seo";
 
@@ -10,14 +10,6 @@ export const Route = createFileRoute("/mediatheque")({
   component: Mediatheque,
 });
 
-const photos = [
-  { src: images.formation, alt: "Session de formation" },
-  { src: images.industrie, alt: "Analyse vibratoire sur moteur" },
-  { src: images.mines, alt: "Équipement minier" },
-  { src: images.btp, alt: "Chantier BTP" },
-  { src: images.fabrication, alt: "Fabrication mécanique" },
-  { src: images.outillage, alt: "Outillage" },
-];
 
 function Mediatheque() {
   const [idx, setIdx] = useState<number | null>(null);
@@ -50,11 +42,11 @@ function Mediatheque() {
       <Section alt>
         <H2 lead="Les vidéos de nos sessions seront publiées ici.">Vidéothèque</H2>
         <div className="mt-8 grid gap-5 md:grid-cols-3">
-          {[images.formation, images.industrie, images.mines].map((src, i) => (
-            <div key={i} className="relative overflow-hidden rounded-lg border">
-              <img src={src} alt="" loading="lazy" width={1024} height={768} className="aspect-video w-full object-cover opacity-60" />
+          {videos.map((v) => (
+            <div key={v.titre} className="relative overflow-hidden rounded-lg border">
+              <img src={v.src} alt={v.titre} loading="lazy" width={1088} height={608} className="aspect-video w-full object-cover" />
               <div className="absolute inset-0 grid place-items-center bg-ink/50 text-ink-foreground">
-                <div className="text-center"><PlayCircle className="mx-auto h-12 w-12" /><p className="mt-2 text-sm">Bientôt disponible</p></div>
+                <div className="text-center"><PlayCircle className="mx-auto h-12 w-12" /><p className="mt-2 text-sm font-semibold">{v.titre}</p><p className="text-xs text-ink-muted">Bientôt disponible</p></div>
               </div>
             </div>
           ))}
