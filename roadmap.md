@@ -1,5 +1,5 @@
 # Roadmap Seven Consulting
-- [ ] Ajouter les avis en carrousel de portraits et le contour animé sur tous les boutons
+- [x] Ajouter les avis en carrousel de portraits et le contour animé sur tous les boutons (exemples signalés, à remplacer par des avis authentiques)
 - [x] Ajouter le bouton devis sous le bouton formations, carrousel automatique avec contrôles et retour sur les pages
 - [x] Remplacer les photos par des visuels distincts de professionnels noirs et rendre le portrait d'accueil visible
 - [x] Boutons du haut de l'accueil sans changement de couleur au survol ou au toucher
