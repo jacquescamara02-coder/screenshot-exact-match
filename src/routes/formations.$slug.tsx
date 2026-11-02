@@ -1,3 +1,4 @@
+import { AnimatedTitle } from "@/components/ui/text-rotate";
 import { createFileRoute, notFound } from "@tanstack/react-router";
 import { formatDate, formations } from "@/data/site";
 import { PageHeader, Section } from "@/components/site/ui";
@@ -47,7 +48,7 @@ function Detail() {
             </dl>
           </div>
           <div id="inscription" className="rounded-lg border bg-card p-7">
-            <h2 className="mb-5 text-2xl font-bold">S'inscrire</h2>
+            <h2 className="mb-5 text-2xl font-bold"><AnimatedTitle>S'inscrire</AnimatedTitle></h2>
             <InscriptionForm formation={f.titre} />
           </div>
         </div>

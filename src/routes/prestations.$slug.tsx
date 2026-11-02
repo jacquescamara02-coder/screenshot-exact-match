@@ -1,3 +1,4 @@
+import { AnimatedTitle } from "@/components/ui/text-rotate";
 import { createFileRoute, notFound } from "@tanstack/react-router";
 import { prestations } from "@/data/site";
 import { PageHeader, Section } from "@/components/site/ui";
@@ -36,13 +37,13 @@ function Detail() {
             <img src={p.img} alt={p.titre} width={1024} height={768} className="rounded-lg" />
             {emploi && (
               <div className="mt-8 rounded-lg border bg-card p-6">
-                <h2 className="mb-2 text-xl font-bold">Offres en cours</h2>
+                <h2 className="mb-2 text-xl font-bold"><AnimatedTitle>Offres en cours</AnimatedTitle></h2>
                 <p className="text-muted-foreground">Aucune offre publiée pour le moment. Vous pouvez déposer une candidature spontanée.</p>
               </div>
             )}
           </div>
           <div className="rounded-lg border bg-card p-7">
-            <h2 className="mb-5 text-2xl font-bold">{emploi ? "Déposer une candidature" : "Demander un devis"}</h2>
+            <h2 className="mb-5 text-2xl font-bold"><AnimatedTitle>{emploi ? "Déposer une candidature" : "Demander un devis"}</AnimatedTitle></h2>
             {emploi ? <CandidatureForm /> : <ContactForm sujet={p.slug === "outillage" || p.slug === "fabrication-mecanique" ? "Fabrication mécanique-outillage" : "Demande de devis"} />}
           </div>
         </div>

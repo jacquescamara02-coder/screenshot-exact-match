@@ -3,6 +3,7 @@ import { Link, useLocation, useRouter } from "@tanstack/react-router";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { AnimatedTitle } from "@/components/ui/text-rotate";
 
 export function Reveal({ children, className, delay = 0 }: { children: ReactNode; className?: string; delay?: number }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -65,7 +66,7 @@ export function PageHeader({ tag, title, lead }: { tag?: string; title: string; 
       <div className="container-site">
         <div><BackButton /></div>
         {tag && <Tag onDark>{tag}</Tag>}
-        <h1 className="max-w-[20ch] text-4xl font-extrabold md:text-6xl">{title}</h1>
+        <h1 className="max-w-[20ch] text-4xl font-extrabold md:text-6xl"><AnimatedTitle>{title}</AnimatedTitle></h1>
         {lead && <p className="mt-4 max-w-[60ch] text-lg text-ink-muted">{lead}</p>}
       </div>
     </div>
@@ -83,7 +84,7 @@ export function Section({ children, alt, className }: { children: ReactNode; alt
 export function H2({ children, lead }: { children: ReactNode; lead?: string }) {
   return (
     <Reveal>
-      <h2 className="mb-4 max-w-[22ch] text-3xl font-bold md:text-5xl">{children}</h2>
+      <h2 className="mb-4 max-w-[22ch] text-3xl font-bold md:text-5xl">{typeof children === "string" ? <AnimatedTitle>{children}</AnimatedTitle> : children}</h2>
       {lead && <p className="max-w-[62ch] text-lg text-muted-foreground">{lead}</p>}
     </Reveal>
   );
@@ -95,7 +96,7 @@ export function CtaBand() {
       <Reveal>
         <div className="flex flex-wrap items-center justify-between gap-7 rounded-[1.5rem] bg-ink px-7 py-10 text-ink-foreground md:px-12 md:py-14">
           <div>
-            <h2 className="text-3xl font-bold md:text-4xl">Un projet de fiabilisation ?</h2>
+            <h2 className="text-3xl font-bold md:text-4xl"><AnimatedTitle>Un projet de fiabilisation ?</AnimatedTitle></h2>
             <p className="mt-2 text-ink-muted">Parlons de vos équipements, de vos équipes et de vos objectifs.</p>
           </div>
           <Link to="/contact" className={btn.gold}>Nous contacter</Link>

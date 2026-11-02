@@ -5,6 +5,7 @@ import { btn, CtaBand, H2, Reveal, Section, Tag } from "@/components/site/ui";
 import { seo } from "@/lib/seo";
 import { FormationCarousel } from "@/components/site/FormationCarousel";
 import { Button } from "@/components/ui/button";
+import { AnimatedTitle } from "@/components/ui/text-rotate";
 import { CircularTestimonials } from "@/components/ui/circular-testimonials";
 
 export const Route = createFileRoute("/")({
@@ -40,7 +41,7 @@ function Home() {
         <div className="container-site relative">
           <Reveal>
             <Tag onDark>Ouagadougou · Burkina Faso</Tag>
-            <h1 className="max-w-[15ch] text-5xl font-extrabold md:text-7xl lg:text-[5.25rem]">Des équipements qui ne tombent pas en panne.</h1>
+            <h1 className="max-w-[15ch] text-5xl font-extrabold md:text-7xl lg:text-[5.25rem]"><AnimatedTitle>Des équipements qui ne tombent pas en panne.</AnimatedTitle></h1>
             <p className="my-7 max-w-[56ch] text-lg text-ink-foreground/85">
               Cabinet d'étude et de formation en expertise, fiabilité et maintenance pour l'industrie, les mines, le BTP et les ressources humaines.
             </p>
@@ -113,8 +114,8 @@ function Home() {
 
       <Section>
         <H2>Avis clients</H2>
-        <p className="mt-3 text-sm text-muted-foreground">Témoignages illustratifs et portraits générés, en attente d’avis clients authentiques.</p>
         <Reveal className="mt-12"><CircularTestimonials testimonials={testimonials} /></Reveal>
+        <p className="mt-6 text-xs text-muted-foreground">Avis de démonstration · portraits générés.</p>
       </Section>
 
       <Section alt>

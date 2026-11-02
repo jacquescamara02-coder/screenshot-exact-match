@@ -13,3 +13,5 @@
 - Shared page headers include history-aware return navigation with parent-page fallback so direct arrivals never leave the site.
 - Button orbit borders are shared through the global CSS and site/Button classes; use the local OrbitBorderButton wrapper for new controls to preserve colors without requiring Originkit authentication.
 - The circular testimonial component uses Framer Motion with scoped keyboard controls and reduced-motion-aware autoplay; testimonial content belongs to the site's central data source.
+
+- Large page and section headings use the shared AnimatedTitle/TextRotate primitive with the existing Framer Motion dependency, preserving source wording and stable dimensions.

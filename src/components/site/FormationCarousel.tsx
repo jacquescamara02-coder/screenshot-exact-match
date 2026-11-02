@@ -27,7 +27,7 @@ export function FormationCarousel() {
     if (!api || !playing || interacting || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const timer = window.setInterval(() => {
       if (!document.hidden) api.scrollNext();
-    }, 4500);
+    }, 2500);
     return () => window.clearInterval(timer);
   }, [api, playing, interacting]);
 

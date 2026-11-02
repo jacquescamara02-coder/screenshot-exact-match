@@ -1,3 +1,4 @@
+import { AnimatedTitle } from "@/components/ui/text-rotate";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { prestations } from "@/data/site";
 import { btn, CtaBand, PageHeader, Reveal, Section } from "@/components/site/ui";
@@ -19,7 +20,7 @@ function Prestations() {
               <div className="card-lift group flex h-full flex-col overflow-hidden rounded-lg border bg-card">
                 <img src={p.img} alt={p.titre} loading="lazy" width={1024} height={768} className="aspect-[4/3] w-full object-cover" />
                 <div className="flex flex-1 flex-col p-7">
-                  <h2 className="mb-2 text-2xl font-bold">{p.titre}</h2>
+                  <h2 className="mb-2 text-2xl font-bold"><AnimatedTitle>{p.titre}</AnimatedTitle></h2>
                   <p className="mb-6 flex-1 text-muted-foreground">{p.texte}</p>
                   <div className="flex flex-wrap gap-2">
                     <Link to="/prestations/$slug" params={{ slug: p.slug }} className={btn.ink}>
