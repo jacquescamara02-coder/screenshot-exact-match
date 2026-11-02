@@ -4,7 +4,7 @@ import { Menu, X, ArrowUp, MessageCircle, Phone, Mail, MapPin } from "lucide-rea
 import { contact, nav, waLink } from "@/data/site";
 import { btn, inputCls, useScrolled } from "./ui";
 import { cn } from "@/lib/utils";
-import logo from "@/assets/seven-consulting-logo.jpg.asset.json";
+import logo from "@/assets/logo-seven-consulting.jpg";
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -12,7 +12,7 @@ export function Header() {
     <header className="fixed inset-x-0 top-0 z-50 border-b border-ink-foreground/10 bg-ink/85 backdrop-blur-md">
       <div className="container-site flex h-[68px] items-center justify-between">
         <Link to="/" className="flex items-center gap-2.5 font-display text-xl font-extrabold text-ink-foreground" onClick={() => setOpen(false)}>
-          <img src={logo.url} alt="Seven Consulting" className="h-[52px] w-[158px] rounded-sm object-contain" />
+          <img src={logo} alt="Seven Consulting" className="h-[52px] w-[158px] rounded-sm object-contain" />
         </Link>
         <nav
           className={cn(
@@ -56,7 +56,7 @@ export function Footer() {
     <footer className="bg-ink pb-8 pt-16 text-ink-muted">
       <div className="container-site grid gap-10 md:grid-cols-4">
         <div className="md:col-span-1">
-          <Link to="/" className="mb-3 inline-flex"><img src={logo.url} alt="Seven Consulting" className="h-[70px] w-[210px] max-w-full rounded-sm object-contain" loading="lazy" /></Link>
+          <Link to="/" className="mb-3 inline-flex"><img src={logo} alt="Seven Consulting" className="h-[70px] w-[210px] max-w-full rounded-sm object-contain" loading="lazy" /></Link>
           <p className="text-sm">Cabinet d'étude et de formation : expertise industrielle, minière, BTP et ressources humaines.</p>
         </div>
         <div>
